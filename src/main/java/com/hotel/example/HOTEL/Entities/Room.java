@@ -7,7 +7,7 @@ import javax.persistence.*;
 import java.math.BigDecimal;
 
 @Entity
-public class Rooms {
+public class Room {
 
     @Id
     @GeneratedValue
@@ -22,7 +22,7 @@ public class Rooms {
     @OneToMany
     private Hotel hotel;
 
-    @ManyToOne
+    @ManyToMany
     private Resevation resevation;
 
     public Hotel getHotel() {
@@ -31,5 +31,13 @@ public class Rooms {
 
     public void setHotel(Hotel hotel) {
         this.hotel = hotel;
+    }
+
+    public Resevation getResevation() {
+        return resevation;
+    }
+
+    public void setResevation(Resevation resevation) {
+        this.resevation = resevation;
     }
 }
