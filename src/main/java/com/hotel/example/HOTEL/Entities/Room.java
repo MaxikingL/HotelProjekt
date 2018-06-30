@@ -5,6 +5,8 @@ package com.hotel.example.HOTEL.Entities;
 
 import javax.persistence.*;
 import java.math.BigDecimal;
+import java.util.ArrayList;
+import java.util.List;
 
 @Entity
 public class Room {
@@ -22,8 +24,8 @@ public class Room {
     @OneToMany
     private Hotel hotel;
 
-    @ManyToMany
-    private Resevation resevation;
+    @ManyToMany(mappedBy = "room")
+    private List<Resevation> resevationList = new ArrayList<>();
 
     public Hotel getHotel() {
         return hotel;
@@ -33,11 +35,11 @@ public class Room {
         this.hotel = hotel;
     }
 
-    public Resevation getResevation() {
-        return resevation;
+    public List<Resevation> getResevationList() {
+        return resevationList;
     }
 
-    public void setResevation(Resevation resevation) {
-        this.resevation = resevation;
+    public void setResevationList(List<Resevation> resevationList) {
+        this.resevationList = resevationList;
     }
 }
