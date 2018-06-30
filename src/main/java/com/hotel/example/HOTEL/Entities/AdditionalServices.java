@@ -16,6 +16,8 @@ public class AdditionalServices {
     private BigDecimal SPA;
     private BigDecimal gym;
 
+    protected AdditionalServices(){}
+
     public AdditionalServices(BigDecimal swimmingpool, BigDecimal SPA, BigDecimal gym) {
         this.swimmingpool = swimmingpool;
         this.SPA = SPA;

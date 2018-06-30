@@ -19,6 +19,21 @@ public class Resevation {
     @Temporal(TemporalType.TIMESTAMP)
     private Date endTime;
 
+    @OneToOne
+    private Payment payment;
+
+    @ManyToMany
+
+
+    public Payment getPayment() {
+        return payment;
+    }
+
+    public void setPayment(Payment payment) {
+        this.payment = payment;
+    }
+
+    protected Resevation(){}
 
     public Resevation(String nameHotel, Date startTime, Date endTime) {
         this.nameHotel = nameHotel;

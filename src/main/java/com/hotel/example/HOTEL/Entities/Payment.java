@@ -3,6 +3,7 @@ package com.hotel.example.HOTEL.Entities;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
+import javax.persistence.OneToOne;
 
 @Entity
 public class Payment {
@@ -12,6 +13,19 @@ public class Payment {
     private Long id;
 
     private boolean statusPayment;
+
+    @OneToOne(mappedBy = "reservation")
+    private Resevation resevation;
+
+    public Resevation getResevation() {
+        return resevation;
+    }
+
+    public void setResevation(Resevation resevation) {
+        this.resevation = resevation;
+    }
+
+    protected Payment() {}
 
     public Payment(boolean statusPayment) {
         this.statusPayment = statusPayment;
