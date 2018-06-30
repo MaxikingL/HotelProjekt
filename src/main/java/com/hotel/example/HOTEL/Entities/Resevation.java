@@ -25,17 +25,25 @@ public class Resevation {
     private Payment payment;
 
     @ManyToMany
-    private List<Room> rom = new ArrayList<>();
+    private List<Room> room = new ArrayList<>();
 
     @OneToMany
-    private List<AdditionalServices> as = new ArrayList<>();
+    private List<AdditionalServices> addSevices = new ArrayList<>();
 
-    public List<Room> getRom() {
-        return rom;
+    public List<Room> getRoom() {
+        return room;
     }
 
-    public void setRom(List<Room> rom) {
-        this.rom = rom;
+    public void setRoom(List<Room> room) {
+        this.room = room;
+    }
+
+    public List<AdditionalServices> getAddSevices() {
+        return addSevices;
+    }
+
+    public void setAddSevices(List<AdditionalServices> addSevices) {
+        this.addSevices = addSevices;
     }
 
     public Payment getPayment() {

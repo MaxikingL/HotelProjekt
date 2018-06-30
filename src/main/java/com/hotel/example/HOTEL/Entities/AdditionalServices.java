@@ -19,15 +19,15 @@ public class AdditionalServices {
     private BigDecimal SPA;
     private BigDecimal gym;
 
-    @OneToMany(mappedBy = "reservation")
-    private List<Resevation> adds = new ArrayList<>();
+    @OneToMany(mappedBy = "addSevices")
+    private List<Resevation> reservations = new ArrayList<>();
 
-    public List<Resevation> getAdds() {
-        return adds;
+    public List<Resevation> getReservations() {
+        return reservations;
     }
 
-    public void setAdds(List<Resevation> adds) {
-        this.adds = adds;
+    public void setReservations(List<Resevation> reservations) {
+        this.reservations = reservations;
     }
 
     protected AdditionalServices(){}
