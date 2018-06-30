@@ -17,7 +17,8 @@ public class Hotel {
     @GeneratedValue
     private Long id;
 
-@OneToMany(mappedBy = "hotel")
+
+    @OneToMany(mappedBy = "hotel")
     private Room room;
 
     public Room getRooms() {
