@@ -18,13 +18,13 @@ public class Hotel {
     private Long id;
 
 @OneToMany(mappedBy = "hotel")
-    private Rooms rooms;
+    private Room room;
 
-    public Rooms getRooms() {
-        return rooms;
+    public Room getRooms() {
+        return room;
     }
 
-    public void setRooms(Rooms rooms) {
-        this.rooms = rooms;
+    public void setRooms(Room room) {
+        this.room = room;
     }
 }
