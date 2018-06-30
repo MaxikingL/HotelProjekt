@@ -23,7 +23,15 @@ public class Resevation {
     private Payment payment;
 
     @ManyToMany
+    private Room room;
 
+    public Room getRoom() {
+        return room;
+    }
+
+    public void setRoom(Room room) {
+        this.room = room;
+    }
 
     public Payment getPayment() {
         return payment;
