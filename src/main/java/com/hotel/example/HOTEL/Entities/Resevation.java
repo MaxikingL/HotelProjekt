@@ -2,7 +2,9 @@ package com.hotel.example.HOTEL.Entities;
 
 
 import javax.persistence.*;
+import java.util.ArrayList;
 import java.util.Date;
+import java.util.List;
 
 @Entity
 public class Resevation {
@@ -23,14 +25,17 @@ public class Resevation {
     private Payment payment;
 
     @ManyToMany
-    private Room room;
+    private List<Room> rom = new ArrayList<>();
 
-    public Room getRoom() {
-        return room;
+    @OneToMany
+    private List<AdditionalServices> as = new ArrayList<>();
+
+    public List<Room> getRom() {
+        return rom;
     }
 
-    public void setRoom(Room room) {
-        this.room = room;
+    public void setRom(List<Room> rom) {
+        this.rom = rom;
     }
 
     public Payment getPayment() {
