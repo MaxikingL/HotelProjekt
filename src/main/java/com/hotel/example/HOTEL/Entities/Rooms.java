@@ -3,10 +3,7 @@ package com.hotel.example.HOTEL.Entities;
 
 
 
-import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-import javax.persistence.Id;
-import javax.persistence.OneToMany;
+import javax.persistence.*;
 import java.math.BigDecimal;
 
 @Entity
@@ -24,6 +21,9 @@ public class Rooms {
 
     @OneToMany
     private Hotel hotel;
+
+    @ManyToOne
+    private Resevation resevation;
 
     public Hotel getHotel() {
         return hotel;
