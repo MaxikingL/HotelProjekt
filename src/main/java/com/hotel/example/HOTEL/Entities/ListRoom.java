@@ -15,4 +15,6 @@ public class ListRoom {
     private Long id;
 
 
+
+    private String Type;
 }

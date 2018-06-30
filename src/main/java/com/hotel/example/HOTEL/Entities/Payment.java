@@ -14,7 +14,7 @@ public class Payment {
 
     private boolean statusPayment;
 
-    @OneToOne(mappedBy = "reservation")
+    @OneToOne(mappedBy = "resevation")
     private Resevation resevation;
 
     public Resevation getResevation() {

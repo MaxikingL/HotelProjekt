@@ -24,7 +24,7 @@ public class Room {
     @OneToMany
     private Hotel hotel;
 
-    @ManyToMany(mappedBy = "reservation")
+    @ManyToMany(mappedBy = "room")
     private List<Resevation> resevationList = new ArrayList<>();
 
     public Hotel getHotel() {
