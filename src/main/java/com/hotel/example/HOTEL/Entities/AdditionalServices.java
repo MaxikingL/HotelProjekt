@@ -1,9 +1,6 @@
 package com.hotel.example.HOTEL.Entities;
 
-import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-import javax.persistence.Id;
-import javax.persistence.OneToMany;
+import javax.persistence.*;
 import java.math.BigDecimal;
 import java.util.ArrayList;
 import java.util.List;
@@ -19,7 +16,7 @@ public class AdditionalServices {
     private BigDecimal SPA;
     private BigDecimal gym;
 
-    @OneToMany(mappedBy = "addSevices")
+    @ManyToOne
     private List<Resevation> reservations = new ArrayList<>();
 
     public List<Resevation> getReservations() {
