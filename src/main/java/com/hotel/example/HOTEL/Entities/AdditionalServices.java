@@ -19,13 +19,7 @@ public class AdditionalServices {
     @ManyToOne
     private Resevation resevation;
 
-<<<<<<< HEAD
 
-=======
-<<<<<<< HEAD
-
-=======
-<<<<<<< HEAD
     @ManyToOne
     private Payment payment;
 
@@ -37,10 +31,7 @@ public class AdditionalServices {
         this.payment = payment;
     }
 
-=======
->>>>>>> master
->>>>>>> master
->>>>>>> master
+
     public Resevation getResevation() {
         return resevation;
     }
