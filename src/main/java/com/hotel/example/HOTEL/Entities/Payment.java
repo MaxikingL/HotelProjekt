@@ -1,9 +1,8 @@
 package com.hotel.example.HOTEL.Entities;
 
-import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-import javax.persistence.Id;
-import javax.persistence.OneToOne;
+import javax.persistence.*;
+import java.util.ArrayList;
+import java.util.List;
 
 @Entity
 public class Payment {
@@ -16,6 +15,28 @@ public class Payment {
 
     @OneToOne(mappedBy = "payment")
     private Resevation resevation;
+
+    @OneToOne
+    private Client client;
+
+    @OneToMany
+    private List<AdditionalServices> additionalServices = new ArrayList();
+
+    public List<AdditionalServices> getAdditionalServices() {
+        return additionalServices;
+    }
+
+    public void setAdditionalServices(List<AdditionalServices> additionalServices) {
+        this.additionalServices = additionalServices;
+    }
+
+    public Client getClient() {
+        return client;
+    }
+
+    public void setClient(Client client) {
+        this.client = client;
+    }
 
     public Resevation getResevation() {
         return resevation;

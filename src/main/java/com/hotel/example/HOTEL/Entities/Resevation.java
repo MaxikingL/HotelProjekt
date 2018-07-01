@@ -30,6 +30,28 @@ public class Resevation {
     @OneToMany
     private List<AdditionalServices> as = new ArrayList<>();
 
+    @ManyToOne
+    private Client client;
+
+    public List<AdditionalServices> getAs() {
+        return as;
+    }
+
+    public void setRoom(List<Room> room) {
+        this.room = room;
+    }
+
+    public void setAs(List<AdditionalServices> as) {
+        this.as = as;
+    }
+
+    public Client getClient() {
+        return client;
+    }
+
+    public void setClient(Client client) {
+        this.client = client;
+    }
 
     public List<Room> getRomm() {
         return room;

@@ -1,9 +1,9 @@
 package com.hotel.example.HOTEL.Entities;
 
 
-import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-import javax.persistence.Id;
+import javax.persistence.*;
+import java.util.ArrayList;
+import java.util.List;
 
 
 @Entity
@@ -15,6 +15,39 @@ public class Client {
 
     private String name;
     private String surname;
+
+    @OneToOne
+    private Login login;
+
+    @OneToOne(mappedBy = "client")
+    private Payment payment;
+
+    public Payment getPayment() {
+        return payment;
+    }
+
+    public void setPayment(Payment payment) {
+        this.payment = payment;
+    }
+
+    public Login getLogin() {
+        return login;
+    }
+
+    public void setLogin(Login login) {
+        this.login = login;
+    }
+
+    @OneToMany(mappedBy = "client")
+    private List<Resevation> cl = new ArrayList<>();
+
+    public List<Resevation> getCl() {
+        return cl;
+    }
+
+    public void setCl(List<Resevation> cl) {
+        this.cl = cl;
+    }
 
     protected   Client(){
 
