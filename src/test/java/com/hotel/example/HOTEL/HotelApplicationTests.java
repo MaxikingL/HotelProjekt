@@ -32,6 +32,19 @@ public class HotelApplicationTests {
 		Hotel hotel = repositoryHotel.findById(10L);
 		Assert.assertEquals("Max", hotel.getNameHotel());
 	}
+	@Test
+	public void DeletById(){
+//        repositoryHotel.deleteById();
+//        Assert.assertNull(repositoryHotel.findById());
+	}
+	@Test
+	public void Save(){}
 
+//	        Hotel hotelShouldntExists = repositoryHotel.findById();
+//        Assert.assertNull(hotelShouldntExists);
+//        Hotel newHotel = new Hotel();
+//        repositoryHotel.save();
+//        Hotel hotelAfterInsert = repositoryHotel.findById();
+//        Assert.assertEquals("",hotelAfterInsert.findById());
 
 }
