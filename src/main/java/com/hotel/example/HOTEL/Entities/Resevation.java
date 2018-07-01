@@ -55,8 +55,8 @@ public class Resevation {
         this.endTime = endTime;
     }
 
-    public void setId(Long id) {
-        this.id = id;
+    public Long getId() {
+        return id;
     }
 
     public String getNameHotel() {

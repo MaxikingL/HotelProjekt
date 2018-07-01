@@ -19,6 +19,7 @@ public class Hotel {
     @OneToMany
     private List<Room> rooms = new ArrayList<>();
 
+
     public List<Room> getRooms() {
         return rooms;
     }
@@ -26,4 +27,5 @@ public class Hotel {
     public void setRooms(List<Room> rooms) {
         this.rooms = rooms;
     }
+
 }

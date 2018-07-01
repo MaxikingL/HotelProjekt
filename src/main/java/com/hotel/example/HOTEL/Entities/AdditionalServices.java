@@ -19,6 +19,7 @@ public class AdditionalServices {
     @ManyToOne
     private Resevation resevation;
 
+
     public Resevation getResevation() {
         return resevation;
     }
@@ -35,8 +36,8 @@ public class AdditionalServices {
         this.gym = gym;
     }
 
-    public void setId(Long id) {
-        this.id = id;
+    public Long getId() {
+        return id;
     }
 
     public BigDecimal getSwimmingpool() {
