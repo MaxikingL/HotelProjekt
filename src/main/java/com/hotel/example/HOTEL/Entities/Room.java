@@ -29,6 +29,7 @@ public class Room {
     @ManyToMany
     private List<Resevation> resevationList = new ArrayList<>();
 
+
     public Hotel getHotel() {
         return hotel;
     }
@@ -45,7 +46,7 @@ public class Room {
         this.resevationList = resevationList;
     }
 
-    public Room() {
+    protected Room() {
 
     }
 

@@ -21,6 +21,8 @@ public class Hotel {
     @OneToMany
     private List<Room> rooms = new ArrayList<>();
 
+
+
     protected Hotel(){
 
     }

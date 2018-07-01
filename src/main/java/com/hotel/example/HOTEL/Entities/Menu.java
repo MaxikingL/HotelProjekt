@@ -30,7 +30,7 @@ public class Menu {
         this.workersList = workersList;
     }
 
-    private Menu(){
+    protected Menu(){
 
 
     }

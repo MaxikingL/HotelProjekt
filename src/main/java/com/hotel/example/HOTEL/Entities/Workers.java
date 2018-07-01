@@ -32,7 +32,7 @@ public class Workers {
         this.menuList = menuList;
     }
 
-    private Workers(){
+    protected Workers(){
 
     }
 
