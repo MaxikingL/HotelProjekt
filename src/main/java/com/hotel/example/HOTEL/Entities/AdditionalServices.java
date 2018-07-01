@@ -19,6 +19,7 @@ public class AdditionalServices {
     @ManyToOne
     private Resevation resevation;
 
+<<<<<<< HEAD
     public Resevation getResevation() {
         return resevation;
     }
@@ -26,6 +27,15 @@ public class AdditionalServices {
     public void setResevation(Resevation resevation) {
         this.resevation = resevation;
     }
+=======
+//    public List<Resevation> getReservations() {
+//        return reservations;
+//    }
+//
+//    public void setReservations(List<Resevation> reservations) {
+//        this.reservations = reservations;
+//    }
+>>>>>>> master
 
     protected AdditionalServices(){}
 
