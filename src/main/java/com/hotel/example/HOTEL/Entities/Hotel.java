@@ -1,11 +1,9 @@
 package com.hotel.example.HOTEL.Entities;
 
 
-import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-import javax.persistence.Id;
-import javax.persistence.OneToMany;
-
+import javax.persistence.*;
+import java.util.ArrayList;
+import java.util.List;
 
 
 @Entity
@@ -18,14 +16,14 @@ public class Hotel {
     private Long id;
 
 
-    @OneToMany(mappedBy = "hotel")
-    private Room room;
+    @OneToMany
+    private List<Room> rooms = new ArrayList<>();
 
-    public Room getRooms() {
-        return room;
+    public List<Room> getRooms() {
+        return rooms;
     }
 
-    public void setRooms(Room room) {
-        this.room = room;
+    public void setRooms(List<Room> rooms) {
+        this.rooms = rooms;
     }
 }

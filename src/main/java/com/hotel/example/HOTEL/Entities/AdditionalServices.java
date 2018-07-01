@@ -17,14 +17,14 @@ public class AdditionalServices {
     private BigDecimal gym;
 
     @ManyToOne
-    private List<Resevation> reservations = new ArrayList<>();
+    private Resevation resevation;
 
-    public List<Resevation> getReservations() {
-        return reservations;
+    public Resevation getResevation() {
+        return resevation;
     }
 
-    public void setReservations(List<Resevation> reservations) {
-        this.reservations = reservations;
+    public void setResevation(Resevation resevation) {
+        this.resevation = resevation;
     }
 
     protected AdditionalServices(){}
