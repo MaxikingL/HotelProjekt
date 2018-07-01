@@ -29,10 +29,9 @@ public class HotelApplicationTests {
 
 	@Test
 	public void findById() {
-		//Hotel hotel = repositoryHotel.findById();
-		//Assert.assertEquals(5, hotel.getRooms());
+		Hotel hotel = repositoryHotel.findById(10L);
+		Assert.assertEquals("Max", hotel.getNameHotel());
 	}
-
 
 
 }

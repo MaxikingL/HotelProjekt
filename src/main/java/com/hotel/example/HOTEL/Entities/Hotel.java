@@ -10,12 +10,11 @@ import java.util.List;
 public class Hotel {
 
 
-
     @Id
     @GeneratedValue
     private Long id;
 
-    
+
     private String nameHotel;
 
     @OneToMany
