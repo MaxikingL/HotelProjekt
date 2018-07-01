@@ -13,8 +13,6 @@ public class Resevation {
     @GeneratedValue
     private Long id;
 
-    private String nameHotel;
-
     @Temporal(TemporalType.TIMESTAMP)
     private Date startTime;
 
@@ -71,22 +69,13 @@ public class Resevation {
 
     protected Resevation(){}
 
-    public Resevation(String nameHotel, Date startTime, Date endTime) {
-        this.nameHotel = nameHotel;
+    public Resevation(Date startTime, Date endTime) {
         this.startTime = startTime;
         this.endTime = endTime;
     }
 
     public Long getId() {
         return id;
-    }
-
-    public String getNameHotel() {
-        return nameHotel;
-    }
-
-    public void setNameHotel(String nameHotel) {
-        this.nameHotel = nameHotel;
     }
 
     public Date getStartTime() {
@@ -108,8 +97,7 @@ public class Resevation {
     @Override
     public String toString() {
         return "Resevation{" +
-                "id=" + id +
-                ", nameHotel='" + nameHotel + '\'' +
+                "id=" + id + '\'' +
                 ", startTime=" + startTime +
                 ", endTime=" + endTime +
                 '}';
