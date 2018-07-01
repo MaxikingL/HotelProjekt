@@ -21,10 +21,10 @@ public class Room {
     private BigDecimal price;
 
 
-    @OneToMany
+    @ManyToOne
     private Hotel hotel;
 
-    @ManyToMany(mappedBy = "room")
+    @ManyToMany
     private List<Resevation> resevationList = new ArrayList<>();
 
     public Hotel getHotel() {

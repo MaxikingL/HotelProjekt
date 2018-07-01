@@ -17,15 +17,15 @@ public class AdditionalServices {
     private BigDecimal gym;
 
     @ManyToOne
-    private List<Resevation> reservations = new ArrayList<>();
+    private Resevation resevation;
 
-    public List<Resevation> getReservations() {
-        return reservations;
-    }
-
-    public void setReservations(List<Resevation> reservations) {
-        this.reservations = reservations;
-    }
+//    public List<Resevation> getReservations() {
+//        return reservations;
+//    }
+//
+//    public void setReservations(List<Resevation> reservations) {
+//        this.reservations = reservations;
+//    }
 
     protected AdditionalServices(){}
 
