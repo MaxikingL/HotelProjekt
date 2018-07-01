@@ -43,6 +43,6 @@ public class LoginApplicationTest {
         Login newLogin = new Login("max@gmail.com","Max", "Kolonko", "abc");
         repositoryLogin.save(newLogin);
         Login loginAfterInsert = repositoryLogin.findById(11L);
-        
+
     }
 }
