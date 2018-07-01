@@ -17,7 +17,6 @@ public class Payment {
     @OneToOne(mappedBy = "payment")
     private Resevation resevation;
 
-    
     public Resevation getResevation() {
         return resevation;
     }

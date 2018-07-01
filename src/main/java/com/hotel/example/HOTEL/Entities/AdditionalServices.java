@@ -19,7 +19,28 @@ public class AdditionalServices {
     @ManyToOne
     private Resevation resevation;
 
+<<<<<<< HEAD
 
+=======
+<<<<<<< HEAD
+
+=======
+<<<<<<< HEAD
+    @ManyToOne
+    private Payment payment;
+
+    public Payment getPayment() {
+        return payment;
+    }
+
+    public void setPayment(Payment payment) {
+        this.payment = payment;
+    }
+
+=======
+>>>>>>> master
+>>>>>>> master
+>>>>>>> master
     public Resevation getResevation() {
         return resevation;
     }
