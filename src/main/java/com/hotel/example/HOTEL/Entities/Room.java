@@ -19,6 +19,8 @@ public class Room {
 
     private String TypeOfRoom;
     private BigDecimal price;
+    private Integer NumberOfBeds;
+
 
 
     @ManyToOne
@@ -41,5 +43,45 @@ public class Room {
 
     public void setResevationList(List<Resevation> resevationList) {
         this.resevationList = resevationList;
+    }
+
+    public Room() {
+
+    }
+
+    public Room(String typeOfRoom, BigDecimal price, Integer numberOfBeds, Hotel hotel, List<Resevation> resevationList) {
+        TypeOfRoom = typeOfRoom;
+        this.price = price;
+        NumberOfBeds = numberOfBeds;
+        this.hotel = hotel;
+        this.resevationList = resevationList;
+    }
+
+    public Long getId() {
+        return id;
+    }
+
+    public String getTypeOfRoom() {
+        return TypeOfRoom;
+    }
+
+    public void setTypeOfRoom(String typeOfRoom) {
+        TypeOfRoom = typeOfRoom;
+    }
+
+    public BigDecimal getPrice() {
+        return price;
+    }
+
+    public void setPrice(BigDecimal price) {
+        this.price = price;
+    }
+
+    public Integer getNumberOfBeds() {
+        return NumberOfBeds;
+    }
+
+    public void setNumberOfBeds(Integer numberOfBeds) {
+        NumberOfBeds = numberOfBeds;
     }
 }
