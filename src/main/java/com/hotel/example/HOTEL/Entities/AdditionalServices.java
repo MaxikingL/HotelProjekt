@@ -19,7 +19,6 @@ public class AdditionalServices {
     @ManyToOne
     private Resevation resevation;
 
-
     public Resevation getResevation() {
         return resevation;
     }
@@ -27,6 +26,7 @@ public class AdditionalServices {
     public void setResevation(Resevation resevation) {
         this.resevation = resevation;
     }
+
 
     protected AdditionalServices(){}
 
