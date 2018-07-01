@@ -15,9 +15,27 @@ public class Hotel {
     @GeneratedValue
     private Long id;
 
+    
+    private String nameHotel;
 
     @OneToMany
     private List<Room> rooms = new ArrayList<>();
+
+    protected Hotel(){
+
+    }
+    public Hotel(String nameHotel, List<Room> rooms) {
+        this.nameHotel = nameHotel;
+        this.rooms = rooms;
+    }
+
+    public String getNameHotel() {
+        return nameHotel;
+    }
+
+    public void setNameHotel(String nameHotel) {
+        this.nameHotel = nameHotel;
+    }
 
     public Long getId() {
         return id;
@@ -31,4 +49,12 @@ public class Hotel {
         this.rooms = rooms;
     }
 
+    @Override
+    public String toString() {
+        return "Hotel{" +
+                "id=" + id +
+                ", nameHotel='" + nameHotel + '\'' +
+                ", rooms=" + rooms +
+                '}';
+    }
 }

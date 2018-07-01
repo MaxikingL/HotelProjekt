@@ -31,6 +31,10 @@ public class Login {
         this.client = client;
     }
 
+    protected Login(){
+
+    }
+
     public Login(String email, String name, String surname, String password) {
         this.email = email;
         this.name = name;
@@ -72,5 +76,17 @@ public class Login {
 
     public void setPassword(String password) {
         this.password = password;
+    }
+
+    @Override
+    public String toString() {
+        return "Login{" +
+                "id=" + id +
+                ", email='" + email + '\'' +
+                ", name='" + name + '\'' +
+                ", surname='" + surname + '\'' +
+                ", password='" + password + '\'' +
+                ", client=" + client +
+                '}';
     }
 }

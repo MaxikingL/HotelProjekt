@@ -58,4 +58,14 @@ public class Menu {
     public void setPrice(int price) {
         this.price = price;
     }
+
+    @Override
+    public String toString() {
+        return "Menu{" +
+                "id=" + id +
+                ", meal='" + meal + '\'' +
+                ", price=" + price +
+                ", workersList=" + workersList +
+                '}';
+    }
 }

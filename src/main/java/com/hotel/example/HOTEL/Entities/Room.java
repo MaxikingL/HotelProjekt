@@ -84,4 +84,16 @@ public class Room {
     public void setNumberOfBeds(Integer numberOfBeds) {
         NumberOfBeds = numberOfBeds;
     }
+
+    @Override
+    public String toString() {
+        return "Room{" +
+                "id=" + id +
+                ", TypeOfRoom='" + TypeOfRoom + '\'' +
+                ", price=" + price +
+                ", NumberOfBeds=" + NumberOfBeds +
+                ", hotel=" + hotel +
+                ", resevationList=" + resevationList +
+                '}';
+    }
 }
