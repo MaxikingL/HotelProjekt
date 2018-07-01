@@ -15,7 +15,7 @@ public class Hotel {
     @GeneratedValue
     private Long id;
 
-    
+
     private String nameHotel;
 
     @OneToMany
