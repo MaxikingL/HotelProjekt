@@ -1,6 +1,5 @@
 package com.hotel.example.HOTEL.Repository;
 
-import com.hotel.example.HOTEL.Entities.AdditionalServices;
 import com.hotel.example.HOTEL.Entities.Client;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Repository;
