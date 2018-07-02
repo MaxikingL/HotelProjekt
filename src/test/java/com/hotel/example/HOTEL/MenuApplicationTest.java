@@ -26,10 +26,10 @@ public class MenuApplicationTest {
     @Autowired
     EntityManager em;
 
-
+    @Test
     public void findById() {
-//        Menu menu = repositoryMenu.findById();
-//        Assert.assertEquals("",repositoryMenu.findById());
+          Menu menu = repositoryMenu.findById(500L);
+          Assert.assertEquals(20, menu.getPrice());
 
     }
 
