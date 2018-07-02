@@ -1,3 +1,7 @@
+-- noinspection SqlNoDataSourceInspectionForFile
+
+-- noinspection SqlDialectInspectionForFile
+
 insert into Hotel (id,name_hotel ) values (10, 'Max');
 insert into Hotel (id,name_hotel ) values (20, 'Mal');
 

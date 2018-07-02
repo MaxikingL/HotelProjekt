@@ -11,13 +11,16 @@ import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
 import org.springframework.stereotype.Repository;
+import org.springframework.test.annotation.DirtiesContext;
 import org.springframework.test.context.junit4.SpringRunner;
 
 import javax.persistence.EntityManager;
 import javax.swing.text.html.parser.Entity;
+import javax.transaction.Transactional;
 
 @RunWith(SpringRunner.class)
 @SpringBootTest
+@Transactional
 public class WorkersApplicationTest {
 
     Logger logger = LoggerFactory.getLogger(this.getClass());
@@ -29,24 +32,31 @@ public class WorkersApplicationTest {
     EntityManager em;
 
     @Test
+    @DirtiesContext
     public void findById(){
-//        Workers workers = repositoryWorkers.findById();
-//        Assert.assertEquals("Andrzej",workers.getName());
+        Workers workers = repositoryWorkers.findById(900L);
+        Assert.assertEquals("Walt",workers.getName());
 
     }
     @Test
+    @DirtiesContext
     public void DeletById(){
 
-//        repositoryWorkers.deleteById();
-//        Assert.assertNull(repositoryWorkers.findById());
+        repositoryWorkers.deleteById(910L);
+        Assert.assertNull(repositoryWorkers.findById(910L));
     }
     @Test
+    @DirtiesContext
     public void Save(){
-//        Workers workersShouldntExists = repositoryWorkers.findById();
-//        Assert.assertNull(workersShouldntExists);
-//        Workers newWorkers = new Workers;
-//        repositoryWorkers.save();
-//        Workers workersAfterInsert = repositoryWorkers.findById();
-//        Assert.assertEquals("",workersAfterInsert.findById());
+
+        Workers workers = repositoryWorkers.findById(900L);
+        Assert.assertEquals("Walt",workers.getName());
+
+        workers.setName("Walt-Test");
+        repositoryWorkers.save(workers);
+
+        Workers workers1 = repositoryWorkers.findById(900L);
+        Assert.assertEquals("Walt-Test",workers1.getName());
+
     }
 }

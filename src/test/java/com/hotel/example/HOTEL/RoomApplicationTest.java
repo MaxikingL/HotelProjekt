@@ -9,12 +9,15 @@ import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
+import org.springframework.test.annotation.DirtiesContext;
 import org.springframework.test.context.junit4.SpringRunner;
 
 import javax.persistence.EntityManager;
+import javax.transaction.Transactional;
 
 @RunWith(SpringRunner.class)
 @SpringBootTest
+@Transactional
 public class RoomApplicationTest {
 
 
@@ -27,26 +30,34 @@ public class RoomApplicationTest {
     EntityManager em;
 
 
+    @Test
+    @DirtiesContext
     public void findById(){
 
-//        Room room = repositoryRoom.findById();
-//        Assert.assertEquals("",room.getId());
+        Room room = repositoryRoom.findById(1000L);
+        Assert.assertEquals("one bed",room.getTypeOfRoom());
 
     }
     @Test
+    @DirtiesContext
     public void DeletById(){
-//        repositoryRoom.deleteById();
-//        Assert.assertNull(repositoryRoom.findById());
+        repositoryRoom.deleteById(2000L);
+        Assert.assertNull(repositoryRoom.findById(2000L));
 
     }
     @Test
+    @DirtiesContext
     public void Save(){
-//        Room roomShouldntExists = repositoryRoom.findById();
-//        Assert.assertNull(roomShouldntExists);
-//        Room newRoom = new Room();
-//        repositoryRoom.save();
-//        Room roomAfterInsert = repositoryRoom.findById();
-//        Assert.assertEquals("",roomAfterInsert.findById());
+
+        Room room = repositoryRoom.findById(3000L);
+        Assert.assertEquals("three beds",room.getTypeOfRoom());
+
+        room.setTypeOfRoom("three beds-Test");
+        repositoryRoom.save(room);
+
+        Room room1 = repositoryRoom.findById(3000L);
+        Assert.assertEquals("three beds-Test",room1.getTypeOfRoom());
+
 
     }
 }
