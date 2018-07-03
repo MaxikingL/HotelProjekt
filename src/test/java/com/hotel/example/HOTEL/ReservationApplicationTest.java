@@ -49,10 +49,11 @@ public class ReservationApplicationTest {
     @DirtiesContext
     public void Save(){
 
-        Resevation resevation = repositoryReservation.findById(150L);
-        Assert.assertEquals("2018-07-11",resevation.getEndTime());
+        Resevation resevation1 = repositoryReservation.findById(150L);
+        Assert.assertEquals("2018-07-11",resevation1.getEndTime());
 
-//        resevation.setEndTime(this.);
+
+        //resevation1.setEndTime(2018-07-10);
 //        repositoryReservation.save(resevation)
 
 //          Resevation resevationShouldntExist = repositoryReservation.findById();
