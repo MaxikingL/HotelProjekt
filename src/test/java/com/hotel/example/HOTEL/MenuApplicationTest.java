@@ -29,12 +29,19 @@ public class MenuApplicationTest {
     @Autowired
     EntityManager em;
 
+<<<<<<< HEAD
 
     @Test
     @DirtiesContext
     public void findById() {
         Menu menu = repositoryMenu.findById(500L);
         Assert.assertEquals("breakfast",menu.getMeal());
+=======
+    @Test
+    public void findById() {
+          Menu menu = repositoryMenu.findById(500L);
+          Assert.assertEquals(20, menu.getPrice());
+>>>>>>> master
 
     }
 
