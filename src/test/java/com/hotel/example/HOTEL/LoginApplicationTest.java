@@ -45,11 +45,20 @@ public class LoginApplicationTest {
     @Test
     @DirtiesContext
     public void Save(){
-        Login loginShouldExist = repositoryLogin.findById(11L);
-        Assert.assertNull(loginShouldExist);
-        Login newLogin = new Login("max@gma1il.com","Max", "Kolonko", "abc");
-        repositoryLogin.save(newLogin);
-        Login loginAfterInsert = repositoryLogin.findById(11L);
+        Login login = repositoryLogin.findById(21L);
+        Assert.assertEquals("bernard@gmail.com",login.getEmail());
+
+        login.setEmail("Test@wp.pl");
+        repositoryLogin.save(login);
+
+        Login login1 = repositoryLogin.findById(21L);
+        Assert.assertEquals("Test@wp.pl",login1.getEmail());
+
+//        Login loginShouldExist = repositoryLogin.findById(11L);
+//        Assert.assertNull(loginShouldExist);
+//        Login newLogin = new Login("max@gma1il.com","Max", "Kolonko", "abc");
+//        repositoryLogin.save(newLogin);
+//        Login loginAfterInsert = repositoryLogin.findById(11L);
 
     }
 }

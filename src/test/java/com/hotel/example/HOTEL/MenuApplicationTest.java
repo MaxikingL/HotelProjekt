@@ -30,11 +30,13 @@ public class MenuApplicationTest {
     EntityManager em;
 
 
+
     @Test
     @DirtiesContext
     public void findById() {
         Menu menu = repositoryMenu.findById(500L);
         Assert.assertEquals("breakfast",menu.getMeal());
+
 
     }
 
@@ -50,11 +52,19 @@ public class MenuApplicationTest {
     @DirtiesContext
     public void Save() {
 
-        Menu menuShouldExist = repositoryMenu.findById(500L);
-        Assert.assertNull(repositoryMenu);
-        Menu newMenu = new Menu();
-        repositoryMenu.save(newMenu);
-        Menu menuAfterInsert = repositoryMenu.findById(500L);
+        Menu menu = repositoryMenu.findById(520L);
+        Assert.assertEquals("lunch-pizza",menu.getMeal());
+
+        menu.setMeal("pizza-test");
+        repositoryMenu.save(menu);
+
+        Menu menu1 = repositoryMenu.findById(520L);
+        Assert.assertEquals("pizza-test",menu1.getMeal());
+//        Menu menuShouldExist = repositoryMenu.findById(500L);
+//        Assert.assertNull(repositoryMenu);
+//        Menu newMenu = new Menu();
+//        repositoryMenu.save(newMenu);
+//        Menu menuAfterInsert = repositoryMenu.findById(500L);
 
     }
 }
