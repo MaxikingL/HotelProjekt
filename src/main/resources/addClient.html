@@ -4,20 +4,24 @@
     <meta charset="UTF-8">
     <title>Add Client</title>
     <!--  jQuery -->
-    <script type="text/javascript" src="https://code.jquery.com/jquery-1.11.3.min.js"></script><!-- Isolated Version of Bootstrap, not needed if your site already uses Bootstrap -->
-    <link rel="stylesheet" href="https://formden.com/static/cdn/bootstrap-iso.css" /><!-- Bootstrap Date-Picker Plugin -->
-    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datepicker/1.4.1/js/bootstrap-datepicker.min.js"></script>
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datepicker/1.4.1/css/bootstrap-datepicker3.css"/>
+    <script type="text/javascript" src="https://code.jquery.com/jquery-1.11.3.min.js"></script>
+    <!-- Isolated Version of Bootstrap, not needed if your site already uses Bootstrap -->
+    <link rel="stylesheet" href="https://formden.com/static/cdn/bootstrap-iso.css"/>
+    <!-- Bootstrap Date-Picker Plugin -->
+    <script type="text/javascript"
+            src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datepicker/1.4.1/js/bootstrap-datepicker.min.js"></script>
+    <link rel="stylesheet"
+          href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datepicker/1.4.1/css/bootstrap-datepicker3.css"/>
 
     <script>
 
-        $(document).ready(function(){
+        $(document).ready(function () {
 
-            var date_input=$('input[name="date"]'); //our date input has the name "date"
+            var date_input = $('input[name="date"]'); //our date input has the name "date"
 
-            var container=$('.bootstrap-iso form').length>0 ? $('.bootstrap-iso form').parent() : "body";
+            var container = $('.bootstrap-iso form').length > 0 ? $('.bootstrap-iso form').parent() : "body";
 
-            var options={
+            var options = {
 
                 format: 'mm/dd/yyyy',
 
@@ -36,7 +40,6 @@
     </script>
 
 
-
 </head>
 <body>
 
@@ -48,27 +51,26 @@
     <p>Number of rooms: <input type="number" th:field="*{room}"/></p>
     <p>type room: <br>
 
-    <select Type Of Rooms>
-    <option value="1 bed">1 bed</option>
-    <option value="2 beds">2 beds</option>
-    <option value="3 beds">3 beds</option>
-    <option value="4 beds">4 beds</option>
-    <option value="5 beds">5 beds</option>
-    </select>
+        <select Type Of Rooms>
+            <option value="1 bed">1 bed</option>
+            <option value="2 beds">2 beds</option>
+            <option value="3 beds">3 beds</option>
+            <option value="4 beds">4 beds</option>
+            <option value="5 beds">5 beds</option>
+        </select>
 
-    <br>
+        <br>
     <p>Additional Services: <br>
-    <label class="Additional Services"></label>
-    <label class="checkbox-inline">
-    <input type="checkbox" value="">GYM
-    </label>
-    <label class="checkbox-inline">
-    <input type="checkbox" value="">SWIMMINGPOOL
-    </label>
-    <label class="checkbox-inline">
-    <input type="checkbox" value="">SPA
-    </label>
-
+        <label class="Additional Services"></label>
+        <label class="checkbox-inline">
+            <input type="checkbox" value="">GYM
+        </label>
+        <label class="checkbox-inline">
+            <input type="checkbox" value="">SWIMMINGPOOL
+        </label>
+        <label class="checkbox-inline">
+            <input type="checkbox" value="">SPA
+        </label>
 
 
 </form>
@@ -85,12 +87,19 @@
 
                     <div class="form-group"> <!-- Date input -->
 
-                        <label class="control-label" for="date">Date</label>
+                        <label class="control-label" for="dateStart">Przyjazd:</label>
 
-                        <input class="form-control" id="date" name="date" placeholder="MM/DD/YYY" type="text"/>
+                        <input class="form-control" id="dateStart" name="date" placeholder="MM/DD/YYY" type="text"/>
 
                     </div>
 
+                    <div class="form-group"> <!-- Date input -->
+
+                        <label class="control-label" for="dateEnd">Wyjazd:</label>
+
+                        <input class="form-control" id="dateEnd" name="date" placeholder="MM/DD/YYY" type="text"/>
+
+                    </div>
                     <div class="form-group"> <!-- Submit button -->
 
                         <button class="btn btn-primary " name="submit" type="submit">Submit</button>
