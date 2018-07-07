@@ -2,6 +2,7 @@ package com.hotel.example.HOTEL;
 
 
 import com.hotel.example.HOTEL.Entities.Payment;
+import com.hotel.example.HOTEL.Repository.RepositoryClient;
 import com.hotel.example.HOTEL.Repository.RepositoryPayment;
 import org.junit.Assert;
 import org.junit.Test;
@@ -25,6 +26,7 @@ public class PaymentApplicationTest {
 
     @Autowired
     RepositoryPayment repositoryPayment;
+
     @Autowired
     EntityManager em;
 
@@ -42,6 +44,10 @@ public class PaymentApplicationTest {
     public void DeletById() {
         repositoryPayment.deleteById(120L);
         Assert.assertNull(repositoryPayment.findById(120L));
+
+          repositoryPayment.deleteById(120L);
+          Assert.assertNull(repositoryPayment.findById(120L));
+
 
     }
 
