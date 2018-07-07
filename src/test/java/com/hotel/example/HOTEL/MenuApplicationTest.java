@@ -60,6 +60,8 @@ public class MenuApplicationTest {
 
         Menu menu1 = repositoryMenu.findById(520L);
         Assert.assertEquals("pizza-test",menu1.getMeal());
+
+
 //        Menu menuShouldExist = repositoryMenu.findById(500L);
 //        Assert.assertNull(repositoryMenu);
 //        Menu newMenu = new Menu();

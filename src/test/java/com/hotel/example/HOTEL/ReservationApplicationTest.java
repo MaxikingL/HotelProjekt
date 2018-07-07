@@ -16,6 +16,9 @@ import org.springframework.test.context.junit4.SpringRunner;
 
 import javax.persistence.EntityManager;
 import javax.transaction.Transactional;
+import java.sql.Timestamp;
+import java.text.DateFormat;
+import java.text.SimpleDateFormat;
 import java.util.Date;
 
 @RunWith(SpringRunner.class)
@@ -35,8 +38,14 @@ public class ReservationApplicationTest {
     @DirtiesContext
     public void findById(){
         Resevation reservation = repositoryReservation.findById(150L);
-        Assert.assertEquals("2018-07-11",reservation.getEndTime());
-    }
+        String date = "2018-07-11 00:00:00.0";
+        Assert.assertEquals(date, reservation.getEndTime().toString());
+
+
+        }
+
+
+
 
     @Test
     @DirtiesContext
@@ -49,8 +58,17 @@ public class ReservationApplicationTest {
     @DirtiesContext
     public void Save(){
 
-        Resevation resevation = repositoryReservation.findById(150L);
-        Assert.assertEquals("2018-07-11",resevation.getEndTime());
+        Resevation resevation = new Resevation(new Date("2018-07-11"), new Date ("2019-01-01"));
+        repositoryReservation.save(resevation);
+
+        Resevation resevation1 = repositoryReservation.findById(150L);
+        Assert.assertEquals(new Date("2018-07-11"), new Date ("2019-01-01").getTime());
+
+
+
+//        Assert.assertEquals("2018-07-11",resevation.getEndTime());
+
+
 
 //        resevation.setEndTime(this.);
 //        repositoryReservation.save(resevation)
