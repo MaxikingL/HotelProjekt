@@ -18,7 +18,10 @@ import javax.persistence.EntityManager;
 import javax.transaction.Transactional;
 import java.sql.Timestamp;
 import java.text.DateFormat;
+import java.text.ParseException;
 import java.text.SimpleDateFormat;
+import java.time.Instant;
+import java.util.Calendar;
 import java.util.Date;
 
 @RunWith(SpringRunner.class)
@@ -36,48 +39,36 @@ public class ReservationApplicationTest {
 
     @Test
     @DirtiesContext
-    public void findById(){
+    public void findById() {
         Resevation reservation = repositoryReservation.findById(150L);
         String date = "2018-07-11 00:00:00.0";
         Assert.assertEquals(date, reservation.getEndTime().toString());
 
 
-        }
-
-
+    }
 
 
     @Test
     @DirtiesContext
-    public void DeletById(){
+    public void DeletById() {
 
         repositoryReservation.deleteById(150L);
         Assert.assertNull(repositoryReservation.findById(150L));
     }
+
     @Test
     @DirtiesContext
-    public void Save(){
+    public void Save() throws ParseException {
+        SimpleDateFormat dateformat = new SimpleDateFormat("dd/MM/yyyy");
+        Date date1 = dateformat.parse("17/07/1989");
+        Date date2 = dateformat.parse("18/08/1989");
 
-        Resevation resevation = new Resevation(new Date("2018-07-11"), new Date ("2019-01-01"));
+        Resevation resevation = new Resevation(date1, date2);
         repositoryReservation.save(resevation);
 
-        Resevation resevation1 = repositoryReservation.findById(150L);
-        Assert.assertEquals(new Date("2018-07-11"), new Date ("2019-01-01").getTime());
+        Resevation resevation1 = repositoryReservation.findById(resevation.getId());
 
 
-
-//        Assert.assertEquals("2018-07-11",resevation.getEndTime());
-
-
-
-//        resevation.setEndTime(this.);
-//        repositoryReservation.save(resevation)
-
-//          Resevation resevationShouldntExist = repositoryReservation.findById();
-//        Assert.assertNull(resevationShouldntExists);
-//        Resevation newResevation = new Resevation;
-//        repositoryReservation.save();
-//        Room roomAfterInsert = repositoryRoom.findById();
-//        Assert.assertEquals("",roomAfterInsert.findById());
+        Assert.assertEquals("17/07/1989", dateformat.format(resevation1.getStartTime()).toString());
     }
 }
