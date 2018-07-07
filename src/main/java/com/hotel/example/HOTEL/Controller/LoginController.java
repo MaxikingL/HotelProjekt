@@ -4,6 +4,7 @@ import com.hotel.example.HOTEL.Service.LoginService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.servlet.ModelAndView;
 
 @Controller
 public class LoginController {
@@ -13,7 +14,7 @@ public class LoginController {
 
 
     @RequestMapping("/login")
-    public String displayLogin(){
-        return "login";
+    public ModelAndView displayLogin(){
+        return new ModelAndView("pages/loginPage");
     }
 }
