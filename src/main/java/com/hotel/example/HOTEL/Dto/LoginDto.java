@@ -7,6 +7,13 @@ public class LoginDto {
     private String surname;
     private String password;
 
+    public LoginDto(String email, String name, String surname, String password) {
+        this.email = email;
+        this.name = name;
+        this.surname = surname;
+        this.password = password;
+    }
+
     public String getEmail() {
         return email;
     }
