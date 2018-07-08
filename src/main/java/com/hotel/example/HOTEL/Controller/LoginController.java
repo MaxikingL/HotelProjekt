@@ -34,7 +34,7 @@ public class LoginController {
 
 
         loginService.save(new LoginDto(emailNull, nameNull, surnameNull, passwordNull));
-        return "pages/addClient";
+        return "pages/loginPage";
     }
 }
 
