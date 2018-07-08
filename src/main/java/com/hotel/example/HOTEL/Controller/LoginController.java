@@ -10,8 +10,7 @@ import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.*;
 import org.springframework.web.servlet.ModelAndView;
 
-import java.util.Date;
-import java.util.List;
+
 
 @Controller
 public class LoginController {
@@ -20,39 +19,22 @@ public class LoginController {
     private LoginService loginService;
 
 
-
     @RequestMapping("/login")
     public ModelAndView displayLogin() {
         return new ModelAndView("pages/loginPage");
     }
 
-//    @PostMapping(value = "/login")
-//    public List<Login> listLogin(
-//            @RequestParam(value = "login", required = false) Login loginNull,
-//            @RequestParam(value = " password", required = false) String passwordNull,
-//            @RequestParam(value = "name", required = false) String nameNull,
-//            @RequestParam(value = "surname", required = false) String surnameNull,
-//            @RequestParam(value = "email", required = false) String emailNull) {
-//
-//
-//
-//    return ;}
 
     @PostMapping("/addLogin")
     public String addLogin(
-                @RequestParam(value = "password", required = false) String passwordNull,
-                @RequestParam(value = "name", required = false) String nameNull,
-                @RequestParam(value = "surname", required = false) String surnameNull,
-                @RequestParam(value = "email", required = false) String emailNull){
+            @RequestParam(value = "password", required = false) String passwordNull,
+            @RequestParam(value = "name", required = false) String nameNull,
+            @RequestParam(value = "surname", required = false) String surnameNull,
+            @RequestParam(value = "email", required = false) String emailNull) {
 
 
         loginService.save(new LoginDto(emailNull, nameNull, surnameNull, passwordNull));
         return "pages/loginPage";
     }
 }
-//    @PostMapping("/adduser")
-//    public String addUser(@ModelAttribute UserDto userDto){
-//        userDto.setJoinDate(new Date());
-//        userService.save(userDto);
-//        return "usersaveresult";
-//    }
+
