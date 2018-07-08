@@ -3,7 +3,9 @@ package com.hotel.example.HOTEL.Controller;
 import com.hotel.example.HOTEL.Service.ClientService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
+import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.servlet.ModelAndView;
 
 @Controller
@@ -15,5 +17,14 @@ public class ClientController {
     @RequestMapping("/addClient")
     public ModelAndView displayClient(){
         return new ModelAndView("pages/addClient");
+
+
+
     }
+//    @PostMapping
+//    public String addClient(
+//            @RequestParam(value = )
+//    ){
+//
+//    }
 }

@@ -24,7 +24,7 @@ public class LoginController {
         return new ModelAndView("pages/loginPage");
     }
 
-
+//addLogin
     @PostMapping("/addLogin")
     public String addLogin(
             @RequestParam(value = "password", required = false) String passwordNull,
@@ -34,7 +34,7 @@ public class LoginController {
 
 
         loginService.save(new LoginDto(emailNull, nameNull, surnameNull, passwordNull));
-        return "pages/addClient";
+        return "pages/loginConfirmation";
     }
 }
 
