@@ -24,7 +24,7 @@ public class LoginController {
         return new ModelAndView("pages/loginPage");
     }
 
-//addLogin
+
     @PostMapping("/addLogin")
     public String addLogin(
             @RequestParam(value = "password", required = false) String passwordNull,

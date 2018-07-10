@@ -20,16 +20,7 @@ public class Login {
     private String surname;
     private String password;
 
-    @OneToOne(mappedBy = "login")
-    private Client client;
 
-    public Client getClient() {
-        return client;
-    }
-
-    public void setClient(Client client) {
-        this.client = client;
-    }
 
     protected Login(){
 
@@ -86,7 +77,6 @@ public class Login {
                 ", name='" + name + '\'' +
                 ", surname='" + surname + '\'' +
                 ", password='" + password + '\'' +
-                ", client=" + client +
                 '}';
     }
 }

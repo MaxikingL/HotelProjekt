@@ -8,8 +8,8 @@ insert into Hotel (id,name_hotel ) values (20, 'Mal');
 insert into Login (id,email, name, password,surname) values (11, 'max@gmail.com', 'Max','abc', 'Kolonko');
 insert into Login (id,email, name, password,surname) values (21, 'bernard@gmail.com', 'Benek','cba', 'Trump');
 
-insert into Client(id, name, surname, login_id) values (100, 'Max', 'Kolonko', 11);
-insert into Client(id, name, surname, login_id) values (200, 'Benek', 'Trump', 21);
+insert into Client(id, name, surname) values (100, 'Max', 'Kolonko');
+insert into Client(id, name, surname) values (200, 'Benek', 'Trump');
 
 insert into Room(id, number_of_beds, type_of_room, price, hotel_id) values (1000, 1, 'one bed', 200, 10);
 insert into Room(id, number_of_beds, type_of_room, price, hotel_id) values (2000, 2, 'two beds', 300, 10);
@@ -36,19 +36,19 @@ insert into Workers (id, name, surname) values (900, 'Walt', 'Modest-Amaro');
 insert into Workers (id, name, surname) values (910, 'Michel', 'Moro');
 
 
-insert into Additional_services (id, spa, gym, swimmingpool, payment_id, resevation_id) values (170, 50, 20, 30, 120, 150);
-insert into Additional_services (id, spa, gym, swimmingpool, payment_id, resevation_id) values (180, 50, 20, 30, 130, 160);
-
-insert into RESEVATION_ADDITIONAL_SERVICES (resevation_id, additional_services_id) values (150, 170);
-insert into RESEVATION_ADDITIONAL_SERVICES (resevation_id, additional_services_id) values (160, 180);
-
-insert into MENU_WORKERS_LIST (menu_list_id, workers_list_id) values (500, 900);
-insert into MENU_WORKERS_LIST (menu_list_id, workers_list_id) values (510, 900);
-insert into MENU_WORKERS_LIST (menu_list_id, workers_list_id) values (520, 900);
-insert into MENU_WORKERS_LIST (menu_list_id, workers_list_id) values (540, 900);
-insert into MENU_WORKERS_LIST (menu_list_id, workers_list_id) values (570, 900);
-insert into MENU_WORKERS_LIST (menu_list_id, workers_list_id) values (500, 910);
-insert into MENU_WORKERS_LIST (menu_list_id, workers_list_id) values (520, 910);
-insert into MENU_WORKERS_LIST (menu_list_id, workers_list_id) values (530, 910);
-insert into MENU_WORKERS_LIST (menu_list_id, workers_list_id) values (550, 910);
-insert into MENU_WORKERS_LIST (menu_list_id, workers_list_id) values (560, 910);
+-- insert into Additional_services (id, spa, gym, swimmingpool, payment_id, resevation_id) values (170, 50, 20, 30, 120, 150);
+-- insert into Additional_services (id, spa, gym, swimmingpool, payment_id, resevation_id) values (180, 50, 20, 30, 130, 160);
+--
+-- insert into RESEVATION_ADDITIONAL_SERVICES (resevation_id, additional_services_id) values (150, 170);
+-- insert into RESEVATION_ADDITIONAL_SERVICES (resevation_id, additional_services_id) values (160, 180);
+--
+-- insert into MENU_WORKERS_LIST (menu_list_id, workers_list_id) values (500, 900);
+-- insert into MENU_WORKERS_LIST (menu_list_id, workers_list_id) values (510, 900);
+-- insert into MENU_WORKERS_LIST (menu_list_id, workers_list_id) values (520, 900);
+-- insert into MENU_WORKERS_LIST (menu_list_id, workers_list_id) values (540, 900);
+-- insert into MENU_WORKERS_LIST (menu_list_id, workers_list_id) values (570, 900);
+-- insert into MENU_WORKERS_LIST (menu_list_id, workers_list_id) values (500, 910);
+-- insert into MENU_WORKERS_LIST (menu_list_id, workers_list_id) values (520, 910);
+-- insert into MENU_WORKERS_LIST (menu_list_id, workers_list_id) values (530, 910);
+-- insert into MENU_WORKERS_LIST (menu_list_id, workers_list_id) values (550, 910);
+-- insert into MENU_WORKERS_LIST (menu_list_id, workers_list_id) values (560, 910);

@@ -4,7 +4,10 @@ package com.hotel.example.HOTEL.Entities;
 import javax.persistence.*;
 import java.util.ArrayList;
 import java.util.List;
-
+import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.Id;
+import javax.persistence.OneToOne;
 
 @Entity
 public class Client {
@@ -17,7 +20,7 @@ public class Client {
     private String surname;
 
     @OneToOne
-    private Login login;
+    private Resevation resevation;
 
     @OneToOne(mappedBy = "client")
     private Payment payment;
@@ -30,13 +33,18 @@ public class Client {
         this.payment = payment;
     }
 
-    public Login getLogin() {
-        return login;
+    public void setId(Long id) {
+        this.id = id;
     }
 
-    public void setLogin(Login login) {
-        this.login = login;
+    public Resevation getResevation() {
+        return resevation;
     }
+
+    public void setResevation(Resevation resevation) {
+        this.resevation = resevation;
+    }
+
 
     @OneToMany(mappedBy = "client")
     private List<Resevation> cl = new ArrayList<>();
@@ -53,9 +61,13 @@ public class Client {
 
 
     }
-    public Client(String name, String surname) {
+
+    public Client(String name, String surname, Resevation resevation, Payment payment, List<Resevation> cl) {
         this.name = name;
         this.surname = surname;
+        this.resevation = resevation;
+        this.payment = payment;
+        this.cl = cl;
     }
 
     public String getName() {
@@ -84,7 +96,7 @@ public class Client {
                 "id=" + id +
                 ", name='" + name + '\'' +
                 ", surname='" + surname + '\'' +
-                ", login=" + login +
+                ", resevation=" + resevation +
                 ", payment=" + payment +
                 ", cl=" + cl +
                 '}';

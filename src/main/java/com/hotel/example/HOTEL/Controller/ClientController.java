@@ -1,5 +1,6 @@
 package com.hotel.example.HOTEL.Controller;
 
+import com.hotel.example.HOTEL.Dto.ClientDto;
 import com.hotel.example.HOTEL.Service.ClientService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
@@ -15,16 +16,21 @@ public class ClientController {
     private ClientService clientService;
 
     @RequestMapping("/addClient")
-    public ModelAndView displayClient(){
+    public ModelAndView displayClient() {
         return new ModelAndView("pages/addClient");
 
 
-
     }
+
 //    @PostMapping
 //    public String addClient(
-//            @RequestParam(value = )
-//    ){
+//            @RequestParam(value = "nameClient", required = false) String nameClient,
+//            @RequestParam(value = "surnameClient", required = false) String surnameClient)
+//
+//    {
+//
+//        clientService.save(new ClientDto(nameClient,surnameClient));
+//        return "????????";
 //
 //    }
 }
